@@ -10,31 +10,55 @@ class DashboardScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Dashboard'),
+        backgroundColor: Colors.deepPurple,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Assignment - 4',
-            style: TextStyle(fontSize: 20),
-            ),
-            SizedBox(height: 30),
-            ElevatedButton(onPressed: () {
-              Navigator.push(
-                context, MaterialPageRoute(builder: (context) => EmployeeScreen()),
-                );
-            }, 
-            child: Text('Employee Screen'),
-            ),
-            SizedBox(height: 30),
-            ElevatedButton(onPressed: () {
-              Navigator.push(
-                context, MaterialPageRoute(builder: (context) => GridViewScreen()),
-                );
-            }, 
-            child: Text('Grid View'),
-            ),
-          ],
+
+      body: Container(
+        color: Colors.deepPurple.shade50,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'Assignment - 4',
+                style: TextStyle(fontSize: 20),
+              ),
+
+              const SizedBox(height: 30),
+
+              SizedBox(
+                width: 200,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => EmployeeScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text('Employee Screen'),
+                ),
+              ),
+
+              const SizedBox(height: 20),
+
+              SizedBox(
+                width: 200,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => GridViewScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text('Grid View'),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
